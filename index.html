@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Julius Braun – Photography</title>
+<meta name="description" content="Julius Braun – documentary, cinematic photography for music, events and people. Based in Bavaria, Germany.">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap bar">
+    <a class="logo" href="#start">Julius Braun</a>
+    <nav aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#work-with-me">Work with me</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="start">
+    <div>
+      <h1>Julius Braun</h1>
+      <p class="claim">Not just a photo.</p>
+      <p class="sub">Documentary photography for music, events and people. Based in Bavaria, available wherever the story is.</p>
+    </div>
+    <a class="cue" href="#work">Work<span></span></a>
+  </section>
+
+  <section class="band" id="work" aria-label="Work">
+    <div class="wrap flow" id="flow"></div>
+  </section>
+
+  <section class="band" id="about">
+    <div class="wrap about">
+      <figure class="dev"><div class="ph blank" id="portrait"><i>Placeholder · self-portrait, portrait 4:5</i></div></figure>
+      <div>
+        <h2>About</h2>
+        <p>I’m Julius, a photographer from Gunzenhausen in Bavaria. Since 2025 I’ve been photographing concerts, artists and the moments in between – the waiting before the show, the light that briefly sweeps across the crowd, the silence after the last song.</p>
+        <p>I’m not interested in the perfectly staged picture, but in the honest one. I work quietly, stay close and never in the way. My images should feel like a film you remember: atmospheric, warm, a little melancholic.</p>
+        <p>I’ve photographed shows such as Tanzen im Grünen and Paul Kalkbrenner. I shoot Fujifilm and edit with restraint, so a moment stays the way it was.</p>
+        <p class="sig">Julius</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="work-with-me" style="background:var(--paper2)">
+    <div class="wrap">
+      <h2>Work with me</h2>
+      <p class="lead">For artists, bands and promoters who want more than proof-of-event photos: images that show how a night actually felt.</p>
+      <div class="offers" id="offers"></div>
+      <p class="note">No VAT charged under § 19 UStG (German small business scheme). Travel within 50 km included, further on request. Prices are placeholders and will be updated.</p>
+    </div>
+  </section>
+
+  <section class="band" id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2>Let’s talk.</h2>
+        <p class="lead">Tell me about your project, your tour or your event. I’ll get back to you within two days.</p>
+        <div class="links">
+          <a href="https://www.instagram.com/juliusbrauni/" target="_blank" rel="noopener">Instagram <span>@juliusbrauni</span></a>
+          <a href="https://linktr.ee/juliusbraun" target="_blank" rel="noopener">Linktree <span>linktr.ee/juliusbraun</span></a>
+          <a id="maillink" href="#">Email <span id="mailtext"></span></a>
+        </div>
+      </div>
+      <form id="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp"><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="f"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="f"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="f"><label for="art">What’s it about?</label>
+          <select id="art" name="art">
+            <option>Concert or live event</option>
+            <option>Artist portraits and promo</option>
+            <option>Backstage and tour coverage</option>
+            <option>Something else</option>
+          </select></div>
+        <div class="f"><label for="datum">Date (if known)</label><input id="datum" name="datum" type="date"></div>
+        <div class="f w"><label for="msg">Message</label><textarea id="msg" name="msg" required></textarea></div>
+        <div class="send"><button type="submit">Send enquiry</button><small id="err" role="alert"></small></div>
+        <div class="formmsg" id="sent" aria-live="polite"><p><strong>Thank you!</strong> Your message has been sent. I’ll get back to you within two days.</p></div>
+        <div class="done" id="done" aria-live="polite">
+          <p><strong>Thank you!</strong> Your message is ready. Open it in your mail app, or copy the text and send it to <span id="mailtext2"></span>.</p>
+          <div class="row"><a class="btn" id="openmail" href="#">Open in mail app</a><button type="button" class="ghost" id="copy">Copy text</button></div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Julius Braun · Photography</span>
+    <nav aria-label="Legal"><a href="impressum.html">Imprint</a><a href="datenschutz.html">Privacy</a></nav>
+  </div>
+</footer>
+
+<script>
+{
+  // ── Hier anpassen ──────────────────────────────────────────────
+  const EMAIL = "juliusbraun@me.com";
+
+  // Bilder: bei "src" den Dateinamen eintragen (z. B. "bilder/konzert-01.jpg").
+  // Layout: full (Panorama), left / right (Querformat versetzt), tallr / talll (Hochformat), half1 + half2 (Paar), quote (Zitat)
+  const ARBEITEN = [
+    {lay:"full",  src:"images/night-stage.jpg",         titel:"Night stage",        ort:"Open air"},
+    {lay:"tallr", src:"images/orange-glow.jpg",         titel:"Before the drop",    ort:"Club night"},
+    {lay:"left",  src:"images/corridor.jpg",            titel:"Passage",            ort:"Munich"},
+    {lay:"quote", text:"The moments between the moments."},
+    {lay:"half1", src:"images/tig-dj.jpg",              titel:"Tanzen im Grünen",   ort:"Main stage"},
+    {lay:"half2", src:"images/kalkbrenner-crowd.jpg",   titel:"Paul Kalkbrenner",   ort:"Live"},
+    {lay:"talll", src:"images/scream.jpg",              titel:"Front row",          ort:"Paul Kalkbrenner"},
+    {lay:"right", src:"images/paris-metro.jpg",         titel:"Ligne 6",            ort:"Paris"},
+    {lay:"half1", src:"images/elias-amber.jpg",         titel:"Elias",              ort:"Bamberg"},
+    {lay:"half2", src:"images/kenny-coffee.jpg",        titel:"Kenny",              ort:"Portrait"},
+    {lay:"tallr", src:"images/smoke-bw.jpg",            titel:"Smoke",              ort:"Club night"},
+    {lay:"talll", src:"images/paris-light.jpg",         titel:"Late light",         ort:"Paris"},
+    {lay:"half1", src:"images/kalkbrenner-profile.jpg", titel:"Paul Kalkbrenner",   ort:"Backstage view"},
+    {lay:"half2", src:"images/eyes-closed.jpg",         titel:"Lost in it",         ort:"Festival crowd"},
+    {lay:"full",  src:"images/lasers.jpg",              titel:"Last song",          ort:"Open air"}
+  ];
+
+  const ANGEBOT = [
+    {titel:"Live", text:"Concert, club night or festival – the energy on stage and in front of it.", punkte:["Up to 4 hours on site","60–100 edited images","First selection within 48 hours"], preis:"from €350"},
+    {titel:"Artist", text:"Portraits and promo images that look like you, not like a studio.", punkte:["About 2 hours, one or two locations","20–30 edited images","Formats for press, streaming and social media"], preis:"from €280"},
+    {titel:"Backstage & Story", text:"A whole day, a whole story – from soundcheck to the last song.", punkte:["Full-day coverage or a tour stop","Documentary photo series","Short clips for social media on request"], preis:"on request"}
+  ];
+  // ───────────────────────────────────────────────────────────────
+
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+  document.getElementById("flow").innerHTML = ARBEITEN.map(b => {
+    if (b.lay === "quote") return `<p class="quote dev">${esc(b.text)}</p>`;
+    const bild = b.src
+      ? `<div class="ph"><img src="${esc(b.src)}" alt="${esc(b.titel)}" loading="lazy"></div>`
+      : `<div class="ph blank"><i>Placeholder · ${esc(b.ort)}</i></div>`;
+    return `<figure class="${esc(b.lay)} dev">${bild}<figcaption><em>${esc(b.titel)}</em><span>${b.src ? esc(b.ort) : ""}</span></figcaption></figure>`;
+  }).join("");
+
+  document.getElementById("offers").innerHTML = ANGEBOT.map(o => `
+    <div class="offer dev">
+      <h3>${esc(o.titel)}</h3>
+      <div><p>${esc(o.text)}</p><ul>${o.punkte.map(p => `<li>${esc(p)}</li>`).join("")}</ul></div>
+      <div class="price">${esc(o.preis)}</div>
+    </div>`).join("");
+
+  // Entwicklerbad: Bilder tauchen langsam auf
+  const devObs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); devObs.unobserve(e.target); }
+  }), {threshold:.18, rootMargin:"0px 0px -6% 0px"});
+  document.querySelectorAll(".dev").forEach(el => devObs.observe(el));
+
+  // Kopfzeile bekommt beim Scrollen einen Papierhintergrund
+  const head = document.getElementById("top");
+  const onScroll = () => head.classList.toggle("solid", scrollY > 40);
+  addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  // Mail-Angaben
+  ["mailtext","mailtext2"].forEach(id => document.getElementById(id).textContent = EMAIL);
+  document.getElementById("maillink").href = "mailto:" + EMAIL;
+
+  // Kontaktformular: bereitet die Mail vor, verschickt nichts selbst
+  const form = document.getElementById("form"), err = document.getElementById("err"), done = document.getElementById("done");
+  let body = "";
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const v = id => document.getElementById(id).value.trim();
+    if (!v("name") || !v("msg") || !/^\S+@\S+\.\S+$/.test(v("email"))) {
+      err.textContent = "Please add your name, a valid email and a message."; return;
+    }
+    err.textContent = "";
+    // Live on Netlify: send the form directly
+    const onNetlify = location.protocol === "https:" && !/claude/.test(location.hostname);
+    if (onNetlify) {
+      const btn = form.querySelector("button[type=submit]"); btn.disabled = true; btn.textContent = "Sending …";
+      fetch("/", {method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body:new URLSearchParams(new FormData(form)).toString()})
+        .then(r => { if (!r.ok) throw 0; form.querySelectorAll(".f,.send").forEach(el => el.style.display = "none"); document.getElementById("sent").classList.add("show"); })
+        .catch(() => { btn.disabled = false; btn.textContent = "Send enquiry"; err.textContent = "Sending failed. Please email " + EMAIL + " directly."; });
+      return;
+    }
+    const datum = v("datum") ? new Date(v("datum")).toLocaleDateString("en-GB") : "not set yet";
+    body = `Hi Julius,\n\n${v("msg")}\n\nType: ${v("art")}\nDate: ${datum}\n\nBest,\n${v("name")}\n${v("email")}`;
+    document.getElementById("openmail").href =
+      `mailto:${EMAIL}?subject=${encodeURIComponent("Enquiry: " + v("art"))}&body=${encodeURIComponent(body)}`;
+    done.classList.add("show");
+    done.scrollIntoView({behavior:"smooth", block:"nearest"});
+  });
+  document.getElementById("copy").addEventListener("click", async e => {
+    try { await navigator.clipboard.writeText(body); e.target.textContent = "Copied"; }
+    catch { e.target.textContent = "Copy not available"; }
+  });
+}
+</script>
+</body>
+</html>
